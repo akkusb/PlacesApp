@@ -1,13 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceListViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceListViewController" customModule="PlacesApp" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="TYU-Gr-2z9" id="cLd-we-aDR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,7 +20,31 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SwN-eT-wtU">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TYU-Gr-2z9">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="TYU-Gr-2z9" firstAttribute="top" secondItem="SwN-eT-wtU" secondAttribute="top" id="1Ms-OC-G1C"/>
+                        <constraint firstItem="TYU-Gr-2z9" firstAttribute="leading" secondItem="SwN-eT-wtU" secondAttribute="leading" id="Fxy-PL-Ant"/>
+                        <constraint firstAttribute="trailing" secondItem="TYU-Gr-2z9" secondAttribute="trailing" id="Vmf-pL-ESF"/>
+                        <constraint firstAttribute="bottom" secondItem="TYU-Gr-2z9" secondAttribute="bottom" id="nNY-ay-V2X"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SwN-eT-wtU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="UeM-EL-Mls"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SwN-eT-wtU" secondAttribute="trailing" id="sbZ-l3-t1q"/>
+                <constraint firstItem="SwN-eT-wtU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uof-VP-Jr4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="SwN-eT-wtU" secondAttribute="bottom" id="w99-b5-5K9"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
