@@ -38,7 +38,11 @@ class PlaceDetailPopupViewController: BaseViewController, MKMapViewDelegate {
         mapRegion.span.longitudeDelta = 0.2;
         self.mapView.setRegion(mapRegion, animated: true)
         
-//        self.venueImageView.loadImage(url: self.venue.)
+        if let suffix = self.venue?.bestPhoto?.suffix, let prefix = self.venue?.bestPhoto?.prefix{
+            let imageUrlString = suffix + prefix
+            self.venueImageView.loadImage(url: imageUrlString)
+        }
+        
     }
     
     func popupShowAnimation() {

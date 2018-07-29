@@ -131,8 +131,11 @@ class SearchModel: NSObject {
                 self.getVenueDetails(venue: venue, success: { (venueDetailResponse) in
                     dispatchGroup.leave()
                     venue.rating = venueDetailResponse?.venue?.rating
+                    venue.bestPhoto = venueDetailResponse?.venue?.bestPhoto
                 }, failure: { (err) in
                     dispatchGroup.leave()
+                    UIHelper.showError(error: err)
+                    
                 })
             }
 

@@ -31,6 +31,7 @@ class VenueModel: NSObject, Codable {
     var location : LocationModel?
     var name : String?
     var rating : Double?
+    var bestPhoto : ImageModel?
     
     override init() {
         super.init()
@@ -61,7 +62,7 @@ class CategoryModel: NSObject, Codable {
     
     var id : String?
     var pluralName : String?
-    var icon : IconModel?
+    var icon : ImageModel?
     var name : String?
     var shortName : String?
     var primary : Bool?
@@ -71,7 +72,7 @@ class CategoryModel: NSObject, Codable {
     }
 }
 
-class IconModel: NSObject, Codable {
+class ImageModel: NSObject, Codable {
     
     var prefix : String? // "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/playground_"
     var suffix : String? // ".png"
