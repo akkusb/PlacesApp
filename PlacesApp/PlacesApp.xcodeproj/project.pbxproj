@@ -203,20 +203,11 @@
 				5ED2873F210E3B410043E6C1 /* Views */,
 				5E3392C6210C89220070BDBF /* Extensions.swift */,
 				5E3392C7210C89220070BDBF /* LibraryExtensions.swift */,
-				5E3392C8210C89220070BDBF /* Localization */,
 				5E3392C9210C89220070BDBF /* Service */,
-				5E3392CE210C89220070BDBF /* State */,
 				5E3392CF210C89220070BDBF /* UI */,
 				5E3392D2210C89220070BDBF /* ViewControllers */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		5E3392C8210C89220070BDBF /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Localization;
 			sourceTree = "<group>";
 		};
 		5E3392C9210C89220070BDBF /* Service */ = {
@@ -228,13 +219,6 @@
 				5E3392CD210C89220070BDBF /* JSONModel.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		5E3392CE210C89220070BDBF /* State */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = State;
 			sourceTree = "<group>";
 		};
 		5E3392CF210C89220070BDBF /* UI */ = {

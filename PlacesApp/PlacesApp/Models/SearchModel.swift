@@ -48,10 +48,8 @@ class SearchModel: NSObject {
                         self.getAllVenueDetails(success: {
                             success(placesResponse)
                         })
-                        
-//                        success(placesResponse)
-                    }else
-                    {
+                    }
+                    else{
                         failure(ErrorModel())
                     }
                 }
@@ -59,25 +57,10 @@ class SearchModel: NSObject {
                     failure(ErrorModel())
                 }
                 
-                
-//                // parse the JSON data with NSJSONSerialization or Lib like SwiftyJson
-//                // e.g. {"meta":{"code":200},"notifications":[{"...
-//                let json = try! JSONSerialization.jsonObject(with: data, options: [])
-//                print(json)
             case let .failure(error):
                 
                 failure(ErrorModel.init(description: error.localizedDescription))
-                
-                // Error handling
-//                switch error {
-//                case let .connectionError(connectionError):
-//                    print(connectionError)
-//                case let .responseParseError(responseParseError):
-//                    print(responseParseError)   // e.g. JSON text did not start with array or object and option to allow fragments not set.
-//                case let .apiError(apiError):
-//                    print(apiError.errorType)   // e.g. endpoint_error
-//                    print(apiError.errorDetail) // e.g. The requested path does not exist.
-//                }
+
             }
         }
         
@@ -133,7 +116,6 @@ class SearchModel: NSObject {
                     venue.bestPhoto = venueDetailResponse?.venue?.bestPhoto
                 }, failure: { (err) in
                     dispatchGroup.leave()
-//                    UIHelper.showError(error: err)
                     
                 })
             }
