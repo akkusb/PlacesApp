@@ -28,9 +28,8 @@ class SearchModel: NSObject {
             self.query = self.defaultQuery
         }
         let parameter: [String: String] = [
-            //            "ll": "35.702069,139.7753269",
             "near": self.query,
-            "limit": "10",
+            "limit": "20",
             ];
         
         let client = FoursquareAPIClient(clientId: clientId, clientSecret: clientSecret)

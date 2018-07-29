@@ -14,8 +14,6 @@ class PlaceTableViewCell: BaseTableViewCell {
     @IBOutlet weak var venueLocationLabel: UILabel!
     @IBOutlet weak var venueRatingLabel: UILabel!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,6 +26,7 @@ class PlaceTableViewCell: BaseTableViewCell {
     }
     
     override func refreshCellWithData(_ cellData: Any?) {
+        
         if let venue : VenueModel = cellData as? VenueModel{
             self.venueNameLabel.text = venue.name
             self.venueLocationLabel.text = venue.location?.address

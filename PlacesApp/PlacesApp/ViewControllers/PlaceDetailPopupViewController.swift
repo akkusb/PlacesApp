@@ -18,12 +18,14 @@ class PlaceDetailPopupViewController: BaseViewController, MKMapViewDelegate {
     @IBOutlet weak var venueImageView: BaseImageView!
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
         self.popupShowAnimation()
     }
     
     
     override func initialize() {
+        
         self.mapView.delegate = self
         
         let annotation = MKPointAnnotation()
@@ -46,6 +48,7 @@ class PlaceDetailPopupViewController: BaseViewController, MKMapViewDelegate {
     }
     
     func popupShowAnimation() {
+        
         self.backgroundView.alpha = 0
         UIView.animate(withDuration: 0.3) {
             self.backgroundView.alpha = 0.6
@@ -62,6 +65,7 @@ class PlaceDetailPopupViewController: BaseViewController, MKMapViewDelegate {
     }
 
     @IBAction func backgroundButtonAction(_ sender: Any) {
+        
         self.popupDismissAnimation()
     }
     

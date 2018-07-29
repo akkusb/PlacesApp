@@ -11,6 +11,7 @@ import UIKit
 class SplashViewController: BaseViewController {
 
     override func viewDidAppear(_ animated: Bool) {
+        
         super.viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2) {
             self.navigateToSearchPlaceViewController()
@@ -18,6 +19,7 @@ class SplashViewController: BaseViewController {
     }
     
     func navigateToSearchPlaceViewController() {
+        
         let searchPlaceViewController = SearchPlaceViewController()
         let searchPlaceNavigationController = UINavigationController.init(rootViewController: searchPlaceViewController)
         UIApplication.shared.keyWindow?.rootViewController = searchPlaceNavigationController

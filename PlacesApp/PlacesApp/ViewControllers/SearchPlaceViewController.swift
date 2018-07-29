@@ -12,26 +12,22 @@ class SearchPlaceViewController: BaseViewController {
 
     @IBOutlet weak var searchTextField: UITextField!
     
+    @IBOutlet weak var searchContainerCenterYConstraint: NSLayoutConstraint!
+    
     override func initialize() {
+        
         self.title = "Anasayfa"
+        let topBarHeight = UIApplication.shared.statusBarFrame.size.height + (self.navigationController?.navigationBar.frame.height ?? 0.0)
+        self.searchContainerCenterYConstraint.constant = -topBarHeight/2
     }
     
     @IBAction func searchButtonAction(_ sender: Any) {
-
         
         let placeListViewController = PlaceListViewController()
         if let query = self.searchTextField.text{
             placeListViewController.searchModel.query = query
         }
         self.navigationController?.pushViewController(placeListViewController, animated: true)
-
-//        let searchModel = SearchModel()
-//        searchModel.search(queryString: self.searchTextField.text, success: { (placesResponse) in
-//            print("")
-//        }) { (err) in
-//
-//        }
-        
     }
     
 }

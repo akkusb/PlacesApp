@@ -16,6 +16,7 @@ class PlaceListViewController: BaseViewController, UITableViewDelegate, UITableV
     var searchModel : SearchModel = SearchModel()
     
     override func initialize() {
+        
         self.title = "Mekanlar"
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -25,6 +26,7 @@ class PlaceListViewController: BaseViewController, UITableViewDelegate, UITableV
     }
     
     func loadData() {
+        
         self.showHud()
         self.searchModel.search(success: { (placesResponse) in
             self.hideHud()
@@ -36,6 +38,7 @@ class PlaceListViewController: BaseViewController, UITableViewDelegate, UITableV
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlaceTableViewCell", for: indexPath) as! PlaceTableViewCell
         if let venues = self.searchModel.venues{
             let currentVenue = venues[indexPath.row]
@@ -47,6 +50,7 @@ class PlaceListViewController: BaseViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         if let venues = self.searchModel.venues{
             let currentVenue = venues[indexPath.row]
             self.showDetailPopup(venue: currentVenue)
@@ -54,11 +58,13 @@ class PlaceListViewController: BaseViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return self.searchModel.venues?.count ?? 0
     }
     
     
     func showDetailPopup(venue: VenueModel) {
+        
         let placeDetailPopupViewController = PlaceDetailPopupViewController()
         placeDetailPopupViewController.venue = venue
         
