@@ -134,7 +134,7 @@ class SearchModel: NSObject {
                     venue.bestPhoto = venueDetailResponse?.venue?.bestPhoto
                 }, failure: { (err) in
                     dispatchGroup.leave()
-                    UIHelper.showError(error: err)
+//                    UIHelper.showError(error: err)
                     
                 })
             }
