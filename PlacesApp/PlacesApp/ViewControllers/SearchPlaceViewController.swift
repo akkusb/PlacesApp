@@ -18,13 +18,19 @@ class SearchPlaceViewController: BaseViewController {
     
     @IBAction func searchButtonAction(_ sender: Any) {
 
-//        let searchString = self.searchTextField.text ?? "İstanbul"
-        let searchModel = SearchModel()
-        searchModel.search(queryString: self.searchTextField.text, success: { (placesResponse) in
-            print("")
-        }) { (err) in
-            
+        
+        let placeListViewController = PlaceListViewController()
+        if let query = self.searchTextField.text{
+            placeListViewController.searchModel.query = query
         }
+        self.navigationController?.pushViewController(placeListViewController, animated: true)
+
+//        let searchModel = SearchModel()
+//        searchModel.search(queryString: self.searchTextField.text, success: { (placesResponse) in
+//            print("")
+//        }) { (err) in
+//
+//        }
         
     }
     

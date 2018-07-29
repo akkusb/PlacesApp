@@ -7,29 +7,59 @@
 //
 
 import UIKit
+import MapKit
 
-class PlaceDetailPopupViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+class PlaceDetailPopupViewController: BaseViewController, MKMapViewDelegate {
+    
+    var venue: VenueModel?
+    
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var venueImageView: BaseImageView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.popupShowAnimation()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func initialize() {
+        self.mapView.delegate = self
+        
+        let annotation = MKPointAnnotation()
+        let centerCoordinate = CLLocationCoordinate2D(latitude: self.venue?.location?.lat ?? 41, longitude:self.venue?.location?.lng ?? 29)
+        annotation.coordinate = centerCoordinate
+        annotation.title = self.venue?.name
+        self.mapView.addAnnotation(annotation)
+        
+        var mapRegion = MKCoordinateRegion()
+        mapRegion.center = centerCoordinate
+        mapRegion.span.latitudeDelta = 0.2;
+        mapRegion.span.longitudeDelta = 0.2;
+        self.mapView.setRegion(mapRegion, animated: true)
+        
+//        self.venueImageView.loadImage(url: self.venue.)
     }
-    */
+    
+    func popupShowAnimation() {
+        self.backgroundView.alpha = 0
+        UIView.animate(withDuration: 0.3) {
+            self.backgroundView.alpha = 0.6
+        }
+    }
+    
+    func popupDismissAnimation() {
+        
+        UIView.animate(withDuration: 0.3) {
+            self.backgroundView.alpha = 0
+        }
+        
+        self.dismissViewController()
+    }
+
+    @IBAction func backgroundButtonAction(_ sender: Any) {
+        self.popupDismissAnimation()
+    }
+    
 
 }

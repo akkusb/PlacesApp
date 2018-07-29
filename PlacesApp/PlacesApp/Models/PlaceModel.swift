@@ -30,6 +30,7 @@ class VenueModel: NSObject, Codable {
     var categories : [CategoryModel]?
     var location : LocationModel?
     var name : String?
+    var rating : Double?
     
     override init() {
         super.init()
@@ -94,6 +95,27 @@ class PlacesOuterResponse: NSObject, Codable {
     
     var meta : MetaModel?
     var response : PlacesResponse?
+    
+    
+    override init() {
+        super.init()
+    }
+}
+
+class VenueDetailResponse: NSObject, Codable {
+    
+    var venue : VenueModel?
+    
+    
+    override init() {
+        super.init()
+    }
+}
+
+class VenueDetailOuterResponse: NSObject, Codable {
+    
+    var meta : MetaModel?
+    var response : VenueDetailResponse?
     
     
     override init() {

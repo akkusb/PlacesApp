@@ -12,6 +12,7 @@ class PlaceTableViewCell: BaseTableViewCell {
 
     @IBOutlet weak var venueNameLabel: UILabel!
     @IBOutlet weak var venueLocationLabel: UILabel!
+    @IBOutlet weak var venueRatingLabel: UILabel!
     
     
     
@@ -28,7 +29,9 @@ class PlaceTableViewCell: BaseTableViewCell {
     
     override func refreshCellWithData(_ cellData: Any?) {
         if let venue : VenueModel = cellData as? VenueModel{
-            
+            self.venueNameLabel.text = venue.name
+            self.venueLocationLabel.text = venue.location?.address
+            self.venueRatingLabel.text = venue.rating?.stringValue()
         }
     }
     

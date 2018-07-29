@@ -43,6 +43,7 @@
 		5ED2873A210C97350043E6C1 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED28739210C97350043E6C1 /* PlaceModel.swift */; };
 		5ED2873D210C9FEF0043E6C1 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2873B210C9FEF0043E6C1 /* PlaceTableViewCell.swift */; };
 		5ED2873E210C9FEF0043E6C1 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED2873C210C9FEF0043E6C1 /* PlaceTableViewCell.xib */; };
+		5ED28741210E3B4D0043E6C1 /* BaseImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED28740210E3B4D0043E6C1 /* BaseImageView.swift */; };
 		F21D2CCD6951BF39C439E3AA /* Pods_PlacesApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCAAEE6F437EE5386D324F3 /* Pods_PlacesApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		5ED28739210C97350043E6C1 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		5ED2873B210C9FEF0043E6C1 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		5ED2873C210C9FEF0043E6C1 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
+		5ED28740210E3B4D0043E6C1 /* BaseImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseImageView.swift; sourceTree = "<group>"; };
 		EC7CA51B6FE3B64E436AAD08 /* Pods-PlacesApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesApp/Pods-PlacesApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FC77ED3644D707A02C3A2DD0 /* Pods-PlacesApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacesApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlacesApp/Pods-PlacesApp.release.xcconfig"; sourceTree = "<group>"; };
 		FCCAAEE6F437EE5386D324F3 /* Pods_PlacesApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlacesApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +200,7 @@
 		5E3392C5210C89220070BDBF /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5ED2873F210E3B410043E6C1 /* Views */,
 				5E3392C6210C89220070BDBF /* Extensions.swift */,
 				5E3392C7210C89220070BDBF /* LibraryExtensions.swift */,
 				5E3392C8210C89220070BDBF /* Localization */,
@@ -297,6 +300,14 @@
 				5ED28739210C97350043E6C1 /* PlaceModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5ED2873F210E3B410043E6C1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5ED28740210E3B4D0043E6C1 /* BaseImageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C079BA6C27DE219A06555A7C /* Pods */ = {
@@ -532,6 +543,7 @@
 				5E3392EB210C89400070BDBF /* FoursquareAuthClient.swift in Sources */,
 				5E3392EA210C89400070BDBF /* FoursquareAPIClient.swift in Sources */,
 				5E3392DB210C89220070BDBF /* BaseService.swift in Sources */,
+				5ED28741210E3B4D0043E6C1 /* BaseImageView.swift in Sources */,
 				5E3392DD210C89220070BDBF /* JSONModel.swift in Sources */,
 				5ED2873D210C9FEF0043E6C1 /* PlaceTableViewCell.swift in Sources */,
 				5ED2873A210C97350043E6C1 /* PlaceModel.swift in Sources */,
@@ -711,6 +723,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X5TLPW5QYK;
 				INFOPLIST_FILE = PlacesApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.burhan.PlacesApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -727,6 +740,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X5TLPW5QYK;
 				INFOPLIST_FILE = PlacesApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.burhan.PlacesApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
